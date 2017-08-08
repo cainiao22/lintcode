@@ -78,7 +78,11 @@ public class 最大子数组III {
 		
 		return globalMax[k][length];
 	}
-
+	
+	//todo 另一个解决方案在这里  http://www.jiuzhang.com/solution/maximum-subarray-iii
+	public int maxSubArrayBetterSecond(int[] nums, int k) {
+		return 0;
+	}
 	public static void main(String[] args) {
 		int[] nums = new int[] { -1, -2, -3, -100, -1, -50 };
 		int result = new 最大子数组III().maxSubArray(nums, 2);
