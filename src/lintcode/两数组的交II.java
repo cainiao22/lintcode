@@ -1,5 +1,10 @@
 package lintcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * 
  * @author yanpf
@@ -8,7 +13,7 @@ package lintcode;
  * 
  * @example nums1 = [1, 2, 2, 1], nums2 = [2, 2], 返回 [2, 2]
  *
- * @Solution 归并排序思想
+ * @Solution 1、归并排序思想 2、hash思想
  */
 public class 两数组的交II {
 
@@ -71,6 +76,49 @@ public class 两数组的交II {
 				}
 			}
 		}
+	}
+
+	/** hash运算 将nums1映射到map里面， 让nums2去对应 **/
+	public int[] intersectionSecond(int[] nums1, int[] nums2) {
+
+		// Write your code here
+
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+		for (int i = 0; i < nums1.length; ++i) {
+
+			if (map.containsKey(nums1[i]))
+
+				map.put(nums1[i], map.get(nums1[i]) + 1);
+
+			else
+
+				map.put(nums1[i], 1);
+
+		}
+
+		List<Integer> results = new ArrayList<Integer>();
+
+		for (int i = 0; i < nums2.length; ++i)
+
+			if (map.containsKey(nums2[i]) &&
+
+					map.get(nums2[i]) > 0) {
+
+				results.add(nums2[i]);
+
+				map.put(nums2[i], map.get(nums2[i]) - 1);
+
+			}
+
+		int result[] = new int[results.size()];
+
+		for (int i = 0; i < results.size(); ++i)
+
+			result[i] = results.get(i);
+
+		return result;
+
 	}
 
 	public static void main(String[] args) {

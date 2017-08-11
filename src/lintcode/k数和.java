@@ -1,5 +1,10 @@
 package lintcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * 
  * @author yanpf
@@ -40,10 +45,9 @@ public class k数和 {
 		}
 		return sum[target][k][length];
 	}
-	
+
 	/**
-	 * 解决方案2 
-	 * sum[length+1][k+1][target+1] 代表从A里面选取k个组成和为target的解决方案个数
+	 * 解决方案2 sum[length+1][k+1][target+1] 代表从A里面选取k个组成和为target的解决方案个数
 	 * 这里的数组，只是将length和target互换了一下位置
 	 * 
 	 * @param A
@@ -54,32 +58,27 @@ public class k数和 {
 	public int kSumSecond(int A[], int k, int target) {
 		int length = A.length;
 		int[][][] sum = new int[length + 1][k + 1][target + 1];
-		//从前i个数里面选择0个和为0的数，解决方案肯定都是1
-		for(int i=0; i<=length; i++) {
+		// 从前i个数里面选择0个和为0的数，解决方案肯定都是1
+		for (int i = 0; i <= length; i++) {
 			sum[i][0][0] = 1;
 		}
-		for(int i=1; i<= length; i++) {
-			//前i个数中选j个，j肯定小于等于i
-			for(int j=1; j<=k && j <= i; j++) {
-				for(int t = 0; t<= target; t++) {
-					if(A[i-1] > target) {
-						sum[i][j][t] = sum[i-1][j][t];
-					}else {
-						sum[i][j][t] = sum[i-1][j][t] + sum[i-1][j-1][t - A[i-1]];
+		for (int i = 1; i <= length; i++) {
+			// 前i个数中选j个，j肯定小于等于i
+			for (int j = 1; j <= k && j <= i; j++) {
+				for (int t = 0; t <= target; t++) {
+					if (A[i - 1] > target) {
+						sum[i][j][t] = sum[i - 1][j][t];
+					} else {
+						sum[i][j][t] = sum[i - 1][j][t] + sum[i - 1][j - 1][t - A[i - 1]];
 					}
-					
+
 					/**
-					 *  另一种实现，与上面那种等同
-						sum[i][j][t] = 0;
-						if(A[i-1] <= target) {
-							sum[i][j][t] = sum[i-1][j-1][t - A[i-1]];
-						}
-						sum[i][j][t] += sum[i-1][j][t];
-					**/
+					 * 另一种实现，与上面那种等同 sum[i][j][t] = 0; if(A[i-1] <= target) { sum[i][j][t] =
+					 * sum[i-1][j-1][t - A[i-1]]; } sum[i][j][t] += sum[i-1][j][t];
+					 **/
 				}
 			}
 		}
-		
 		return sum[length][k][target];
 	}
 }
