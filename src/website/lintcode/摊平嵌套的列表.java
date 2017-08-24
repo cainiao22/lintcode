@@ -1,4 +1,4 @@
-package lintcode;
+package website.lintcode;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package lintcode;
+package website.lintcode;
 
 /**
  * 
@@ -73,6 +73,11 @@ public class 最大正方形 {
 		
 		return max * max;
     }
+	
+	//todo 单调栈解法
+	public int maxSquareStack(int[][] matrix) {
+		return 0;
+	}
 	
 	public static void main(String[] args) {
 		//new 最大正方形().maxSquare(matrix);

@@ -1,4 +1,4 @@
-package lintcode;
+package website.lintcode;
 
 /**
  * 

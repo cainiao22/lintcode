@@ -1,4 +1,4 @@
-package lintcode;
+package website.lintcode;
 
 /**
  * 
@@ -58,6 +58,11 @@ public class ExpressionExpand {
 		}
 		
 		return sb.toString();
+	}
+	
+	//todo ·ÇµÝ¹é½â·¨
+	private String notDfs(String s) {
+		return null;
 	}
 	
 	public static void main(String[] args) {
