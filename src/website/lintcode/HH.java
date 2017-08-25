@@ -7,7 +7,7 @@ import java.util.List;
  * @author yanpf
  *
  */
-public class HH2 {
+public class HH {
 	
 	public static void print(int[] a) {
 		for(int i=0; i<a.length; i++) {

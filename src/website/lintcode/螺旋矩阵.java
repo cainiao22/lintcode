@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @Solution 直接模拟，但是需要模拟的是三个等长的竹棍头尾相接
  */
-public class 螺旋矩阵 extends HH2 {
+public class 螺旋矩阵 extends HH {
 	
 	//todo 有bug需要修改
 	public List<Integer> spiralOrderError(int[][] matrix) {
