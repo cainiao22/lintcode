@@ -16,7 +16,7 @@ package website.lintcode;
  *
  * @Solution  从后往前找到第一个逆序对。然后把i-1与前面的第一比它大的数交换位置，最后把i~length的数组逆序输出
  */
-public class 下一个排列 extends HH{
+public class 下一个排列 extends HH2{
 	public void nextPermutation(int[] nums) {
 		int i = 0;
         for(i=nums.length - 1; i>0; i--) {

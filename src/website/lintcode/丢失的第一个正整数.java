@@ -10,7 +10,7 @@ package website.lintcode;
  * @Solution 与前面的题类似，难点是{}，{0}，{1}，{-1}，{1,2,3},{1,1}这几种情况的适配
  * 			 想复杂了，难点就是{1,1}这种情况，也就是a[i]与他要交换的位置存放的数字一样，这样会陷入死循环·
  */
-public class 丢失的第一个正整数 extends HH {
+public class 丢失的第一个正整数 extends HH2 {
 
 	public int firstMissingPositive(int[] A) {
 		// write your code here
