@@ -1,5 +1,8 @@
 package website.lintcode;
 
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * 
  * @author yanpf
@@ -18,7 +21,8 @@ package website.lintcode;
 
  * @example 给出 height = [2,1,5,6,6,6]，返回 10
  *
- * @Solution
+ * @Solution 1、遍历。
+ * 			 2、单调栈
  */
 public class 直方图最大矩形覆盖 {
 
@@ -34,14 +38,31 @@ public class 直方图最大矩形覆盖 {
 		
 		return max;
     }
-	//TODO 使用堆栈优化
+	//使用堆栈优化，其实是单调栈的思想
 	public int largestRectangleAreaBetter(int[] height) {
-		return 0;
+		int max = 0;
+		Stack<Integer> stack = new Stack<>();
+		for(int i=0; i<=height.length; i++) {
+			int cur = i == height.length ? -1 : height[i];
+			//目的是保证。cur前面的数据不能大于它，以此类推。就可以保证这个栈是从小到大排列的
+			while(!stack.isEmpty() && height[stack.peek()] >= cur) {
+				int h = stack.pop();
+				//因为比当前元素（height[h])大的都弹出去了。它的前一个元素是比它小
+				//的第一个数。所以求宽度的时候是i - stack.peek() - 1
+				int w = stack.isEmpty() ? i : i - stack.peek() - 1;
+				max = Math.max(max, height[h] * w);
+			}
+			stack.push(i);
+		}
+		
+		return max;
 	}
 	
 	public static void main(String[] args) {
-		int[] height = {2,1,5,6,6,6};
+		int[] height = {2,1,5,6,6,3,6,7,1,4};
 		int result = new 直方图最大矩形覆盖().largestRectangleArea(height);
+		int result2 = new 直方图最大矩形覆盖().largestRectangleAreaBetter(height);
 		System.out.println(result);
+		System.out.println(result2);
 	}
 }
