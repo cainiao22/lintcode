@@ -67,6 +67,10 @@ public class 两个链表的交叉 {
 		return null;
     }  
 	
+	public ListNode getIntersectionNodeFromJiuZhang(ListNode headA, ListNode headB) {
+		return null;
+	}
+	
 	public static void main(String[] args) {
 		new 两个链表的交叉().getIntersectionNode(new ListNode(1), null);
 	}
