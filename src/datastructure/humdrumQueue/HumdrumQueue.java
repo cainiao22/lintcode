@@ -72,4 +72,9 @@ public class HumdrumQueue<T extends Comparable> {
 		return null;
 	}
 	
+	//todo 线段树的区间更新
+	public void insertBetween(int begin, int end, int value) {
+		
+	}
+	
 }

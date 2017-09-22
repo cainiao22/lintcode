@@ -67,6 +67,7 @@ public class 两个链表的交叉 {
 		return null;
     }  
 	
+	//todo 九章算法的逻辑
 	public ListNode getIntersectionNodeFromJiuZhang(ListNode headA, ListNode headB) {
 		return null;
 	}
