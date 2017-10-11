@@ -1,5 +1,6 @@
 package website.lintcode;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -43,6 +44,10 @@ public class HH {
 			}
 			System.out.println();
 		}
+	}
+	
+	public static void print(Serializable x) {
+		System.out.println(x);
 	}
 	
 	public static void swap(int[] a, int i, int j) {
