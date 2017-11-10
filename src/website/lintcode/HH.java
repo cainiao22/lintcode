@@ -2,6 +2,7 @@ package website.lintcode;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 神马玩意 当个基础工具类吧
@@ -13,6 +14,13 @@ public class HH {
 	public static void print(int[] a) {
 		for(int i=0; i<a.length; i++) {
 			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+	}
+	
+	public static void print(Set a) {
+		for(Object i : a) {
+			System.out.print(i + " ");
 		}
 		System.out.println();
 	}
