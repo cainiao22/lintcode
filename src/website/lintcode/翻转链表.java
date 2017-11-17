@@ -62,5 +62,10 @@ class ListNode {
 	this.val = val;
 	this.next = null;
 	}
+	
+	@Override
+	public String toString() {
+		return "" + val;
+	}
 }
 
