@@ -34,6 +34,7 @@ import website.lintcode.二叉查找树中搜索区间.TreeNode;
  */
 public class 前序遍历和中序遍历树构造二叉树 extends HH {
 	
+	//TODO bug待修复
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
         // write your code here
 		if(preorder.length == 0 || inorder.length == 0) {

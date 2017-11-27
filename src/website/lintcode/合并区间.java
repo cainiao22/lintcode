@@ -36,7 +36,7 @@ public class 合并区间 {
 	      
 	      @Override
 	    public String toString() {
-	    	return start + " " + end;
+	    	return "[" + start + "," + end + "]";
 	    }
 	}
 	 
