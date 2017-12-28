@@ -40,7 +40,6 @@ public class SlidingWindow {
 
 				@Override
 				public void accept(HumdrumQueueNode<Integer> t) {
-					// TODO Auto-generated method stub
 					System.out.print(t.getData() + "\t");
 				}
 			});

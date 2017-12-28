@@ -50,7 +50,6 @@ public class ·Ö¸î»ØÎÄ´®II extends HH {
     }
 
 	private boolean isPalindromic(String substring) {
-		// TODO Auto-generated method stub
 		for(int i=0, j=substring.length()-1; i<j; i++, j--) {
 			if(substring.charAt(i) != substring.charAt(j)) {
 				return false;

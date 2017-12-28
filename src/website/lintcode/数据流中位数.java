@@ -31,7 +31,6 @@ public class 数据流中位数 extends HH {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
 				return o1 - o2;
 			}
 		});
@@ -40,7 +39,6 @@ public class 数据流中位数 extends HH {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
 				return o2 - o1;
 			}
 		});
