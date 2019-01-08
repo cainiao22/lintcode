@@ -144,7 +144,7 @@ public class µ¥´Ê½ÓÁúii {
 			String cur = queue.poll();
 			for(String next : nextChars(cur, dict)) {
 				if(!map.containsKey(next)) {
-					map.put(next, new ArrayList<>());
+					map.put(next, new ArrayList<String>());
 				}
 				map.get(next).add(cur);
 				if(!distance.containsKey(next)) {

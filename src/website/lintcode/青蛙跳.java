@@ -131,7 +131,7 @@ public class ÇàÍÜÌø extends HH {
 	 * @return
 	 */
 	public boolean canCross3(int[] stones) {
-		Map<Integer, HashSet<Integer>> map = new HashMap<>();
+		Map<Integer, HashSet<Integer>> map = new HashMap<Integer, HashSet<Integer>>();
 		for(int i=0; i<stones.length; i++) {
 			map.put(stones[i], new HashSet<>());
 		}

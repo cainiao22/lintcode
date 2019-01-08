@@ -246,7 +246,6 @@ public class ½ð×ÖËþ×ª»»¾ØÕó extends HH {
 				 add("BCE");
 				 add("DEF");
 				 add("FFF");
-				 //add("YXZ");
 			 }
 		 };
 		 boolean result = pyramidTransitionDP(bottom, allowed);

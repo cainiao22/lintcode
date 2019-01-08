@@ -23,7 +23,7 @@ public class ·Ö¸î×Ö·û´® extends HH {
 	
 	public static List<List<String>> splitString(String s) {
         // write your code here
-		helper(s, 0, new ArrayList<>());
+		helper(s, 0, new ArrayList<String>());
 		return result;
     }
 	

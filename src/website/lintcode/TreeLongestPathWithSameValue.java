@@ -110,7 +110,7 @@ public class TreeLongestPathWithSameValue extends HH {
 	
 	private int ans = 0;
 	public int LongestPathWithSameValueFromJiuZhang(int[] A, int[] E) {
-		List<List<Integer>> ch = new ArrayList<>();
+		List<List<Integer>> ch = new ArrayList<List<Integer>>();
 		for(int i=0; i<=A.length; i++) {
 			ch.add(new ArrayList<>());
 		}

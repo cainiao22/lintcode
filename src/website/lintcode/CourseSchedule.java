@@ -37,7 +37,7 @@ public class CourseSchedule {
 	public boolean canFinish(int numCourses, int[][] prerequisites) {
         // write your code here
 		//Map<Integer, List<Integer>> map = new HashMap<>();
-		List<List<Integer>> posts = new ArrayList<>(numCourses);
+		List<List<Integer>> posts = new ArrayList<List<Integer>>(numCourses);
 		for(int i=0; i<numCourses; i++) {
 			posts.add(new LinkedList<>());
 		}
