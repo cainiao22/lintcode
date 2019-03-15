@@ -40,7 +40,7 @@ public class °²ÅÅ¿Î³Ì extends HH {
 		int[] result = new int[numCourses];
 		for(int i=0; i<prerequisites.length; i++) {
 			if(tree.get(prerequisites[i][0]) == null) {
-				tree.put(prerequisites[i][0], new ArrayList<Integer>());
+				tree.put(prerequisites[i][0], new ArrayList<>());
 			}
 			tree.get(prerequisites[i][0]).add(prerequisites[i][1]);
 			

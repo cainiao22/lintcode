@@ -29,7 +29,7 @@ public class ÓÅĞã³É¼¨ {
 			stack.push(results[i].score);
 		}
 		
-		Map<Integer, Double> res = new HashMap<Integer, Double>();
+		Map<Integer, Double> res = new HashMap<>();
 		map.forEach((k, v) -> {
 			res.put(k, v.getSum() / 5.0);
 		});

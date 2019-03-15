@@ -24,6 +24,7 @@ package website.lintcode;
  *
  * @Solution 1、分两步来，首先获取target可能所在的行。（这里需要进行一次二分查找。），然后在这行再次进行二叉查找，
  * 			 2、将整个二维数组抽象成一个一维数组来用。这个一维数组的长度就是m*n,而找到mid时候。mid/n,代表行，mid%n代表列
+ * 			 3、 先查找target可能所在的行，在一个一个的遍历
  */
 public class 搜索二维矩阵 {
 	
@@ -102,6 +103,28 @@ public class 搜索二维矩阵 {
 			}
 		}
 		return false;
+	}
+	
+	public boolean searchMatrix3(int[][] matrix, int target) {
+		if(matrix.length == 0) {
+			return false;
+		}
+		int row = 0;
+		int col = matrix[0].length - 1;
+		while(row < matrix.length && col >= 0) {
+			if(matrix[row][col] == target) {
+				return true;
+			}
+			if(matrix[row][col] < target) {
+				row ++;
+			}else {
+				col --;
+			}
+		}
+		
+		return false;
+		
+		
 	}
 	
 	

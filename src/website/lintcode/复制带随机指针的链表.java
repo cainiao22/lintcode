@@ -24,7 +24,6 @@ public class 复制带随机指针的链表 {
 		
 		@Override
 		public String toString() {
-			// TODO Auto-generated method stub
 			return label + "";
 		}
 	}

@@ -33,45 +33,40 @@ import website.lintcode.二叉查找树中搜索区间.TreeNode;
  * 		构造右子树同样, 显然可以用递归方法解决。
  */
 public class 前序遍历和中序遍历树构造二叉树 extends HH {
-	
-	//TODO bug待修复
+
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
         // write your code here
 		if(preorder.length == 0 || inorder.length == 0) {
 			return null;
 		}
 		TreeNode root = new TreeNode(preorder[0]);
-		int i=0;
-		for(i=0; i<inorder.length; i++) {
-			if(inorder[i] == root.val) {
-				break;
-			}
+		int mid = preorder[0];
+		int i = 0;
+		while(inorder[i] != mid) {
+			i++;
 		}
-		int[] leftPre = new int[0] ;
-		int[] leftIn = new int[0];
-		if(i > 0) {
-			leftIn = new int[i-1];
-			leftPre = new int[i-1];
-		}
-		int[] rightPre = new int[preorder.length - i];
-		int[] rightIn = new int[inorder.length - i];
+		int[] leftInorder = new int[i];
+		int[] leftPreorder = new int[i];
 		for(int j=0; j<i; j++) {
-			leftPre[j] = preorder[j+1];
-			leftIn[j] = inorder[j];
+			leftInorder[j] = inorder[j];
+			leftPreorder[j] = preorder[1 + j];
 		}
-		for(int j=i+1;j<inorder.length; j++) {
-			rightIn[j-i-1] = inorder[j];
-			rightPre[j-i-1] = preorder[j-1];
+		int[] rightInorder = new int[inorder.length - 1 - i];
+		int[] rightPreorder = new int[inorder.length - 1 - i];
+		for(int j=inorder.length - 1; j>i; j--) {
+			rightInorder[j - i - 1] = inorder[j];
+			rightPreorder[j - i - 1] = preorder[j];
 		}
-		root.left = buildTree(leftPre, leftIn);
-		root.right = buildTree(rightPre, rightIn);
 		
+		root.left = buildTree(leftPreorder, leftInorder);
+		root.right = buildTree(rightPreorder, rightInorder);
 		return root;
     }
 	
 	
 	public static void main(String[] args) {
-		new 前序遍历和中序遍历树构造二叉树().buildTree(new int[]{1,2}, new int[]{1,2});
+		TreeNode root = new 前序遍历和中序遍历树构造二叉树().buildTree(new int[]{1,2,4,6,5,3}, new int[]{6,4,2,5,1,3});
+		System.out.println(root);
 	}
 
 }

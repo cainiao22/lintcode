@@ -111,7 +111,7 @@ public class 带重复元素的子集 extends HH {
 		List<List<Integer>> result = new ArrayList<>();
 		List<Integer> subList = new ArrayList<>();
 		if(nums.length == 0) {
-			result.add(new ArrayList<Integer>());
+			result.add(new ArrayList<>());
 			return result;
 		}
 		helper(nums, 0, subList, result);

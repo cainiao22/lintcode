@@ -36,7 +36,7 @@ import java.util.Set;
  * 
  *          示例2:
  * 
- *          输入: bottom = "XXYX", allowed = ["XXX", "XXY", "XYX", "XYY", "YXZ"]
+ *          输入: bottom = "XXYX", allowed = ["xxx", "xxy", "xyx", "xyy", "yxz"]
  *          输出: false 解释: 金字塔无法构建到顶端 允许存在三元组 (A, B, C) 和 (A, B, D)， 其中C != D.
  *
  * @Solution 有点像回溯算法
@@ -246,6 +246,7 @@ public class 金字塔转换矩阵 extends HH {
 				 add("BCE");
 				 add("DEF");
 				 add("FFF");
+				 //add("YXZ");
 			 }
 		 };
 		 boolean result = pyramidTransitionDP(bottom, allowed);

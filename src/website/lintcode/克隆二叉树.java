@@ -1,5 +1,7 @@
 package website.lintcode;
 
+import website.lintcode.二叉查找树中搜索区间.TreeNode;
+
 /**
  * 
  * @author yanpf
@@ -29,8 +31,7 @@ package website.lintcode;
  */
 public class 克隆二叉树 extends HH {
 	
-	/**
-	 * 为了不报错只好这样了，但是程序是对的
+	
 	 public TreeNode cloneTree(TreeNode root) {
 	        // write your code here
 		 if(root == null) {
@@ -41,7 +42,7 @@ public class 克隆二叉树 extends HH {
 		 copy.right = cloneTree(root.right);
 		 return copy;
 	 }
-	 **/
+	 
 
 }
 
